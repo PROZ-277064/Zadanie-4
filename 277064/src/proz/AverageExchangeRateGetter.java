@@ -34,7 +34,7 @@ public class AverageExchangeRateGetter {
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}
-
+		
 		if (convertedAnswer != null)
 			return String.valueOf(convertedAnswer.getAverage());
 
@@ -54,7 +54,7 @@ public class AverageExchangeRateGetter {
 	@Produces(MediaType.TEXT_XML)
 	public String getAverageXML(@PathParam("table") String table, @PathParam("code") String code,
 			@PathParam("topCount") String topCount) {
-		return "<?xml version=\"1.0\"?>" + "<Avg>" + getAverageFromNBP(table, code, topCount).toString() + "</Avg>";
+		return "<?xml version=\"1.0\"?>" + "<Avg>" + getAverageFromNBP(table, code, topCount) + "</Avg>";
 	}
 
 	@GET
